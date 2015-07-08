@@ -1,0 +1,99 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/** Setting up the navigation bar **/
+
+  .navbar .container{
+    width: inherit;
+  }
+
+  .navbar-brand {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+
+  .navbar .container .navbar-right {
+    margin-right: 0px;
+  }
+
+  /* Manipulating the add button on navigation bar*/
+
+    #add-btn {
+      margin-top: 5px;
+    }
+
+    #add-btn .btn.btn-default {
+      background: none;
+    }
+
+    #add-btn .btn.btn-default:focus {
+      background: none;
+    }
+
+    #add-btn .btn.btn-default:hover {
+      background-color: #fff;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6) !important;
+      border-color: #66AFE9 !important;
+    }
+
+    #add-btn .btn.btn-default:active {
+      background-color: #eee;
+    }
+
+/** Setting up the scrolling panel that will contain all todos **/
+
+  #scrollpanel {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    margin-top: 51px;
+    background-color: rgba(200, 200, 200, 0.2);
+  }
+
+  /* Basic layout for each todo box */
+    .col-sm-12.msg {
+      height: auto;
+      width: auto;
+      float: none;
+    }
+
+    .msg {
+      font-family: 'Ubuntu', sans-serif;
+      position: relative;
+      overflow: auto;
+
+      box-sizing: border-box;
+
+      margin-left: 12px;
+      margin-right: 12px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 5px rgba(0, 0, 0, 0.075);
+
+    }
+
+      /* Set properties for the different text elements in each todo box */
+        .msg .todo-title {
+          padding-top: 10px;
+          font-weight: 300;
+          text-shadow: 0px 1px 0px rgba(200,200,200, 0.25);
+        }
+
+        .msg .todo-body {
+          font-weight: 400;
+          margin: 15px;
+          text-align: justify;
+        }
+
+        .msg .todo-timestamp {
+          font-weight: 300;
+          float: right;
+          font-size: 12px;
+        }
