@@ -4,10 +4,32 @@
   app.directive("todoItem", function () {
     return {
       restrict : 'E',
-      templateUrl : '../assets/todo-item.html'
+      templateUrl : '../assets/ui-elements/todo-item.html'
     };
   });
-  
+
+  app.directive("searchBar", function(){
+    return {
+      restrict: 'E',
+      templateUrl: '../assets/ui-elements/search-bar.html',
+      controller: function() {
+        //search functionality
+      },
+      controllerAs: 'srchCtrl'
+    };
+  });
+
+  app.directive("addButton", function(){
+    return {
+      restrict: 'A',
+      templateUrl: '../assets/ui-elements/add-button.html',
+      controller: function() {
+        //add button functionality
+      },
+      controllerAs: 'addCtrl'
+    };
+  });
+
   app.controller('navigationController', function() {
     //does nothing yet. Will handle searches & new notes
     return;
