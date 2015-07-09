@@ -2,6 +2,11 @@
   var uiDir = '../assets/ui-elements/';
   var app = angular.module('todos', ['ngSanitize']);
 
+  app.controller("mainController", function ($scope) {
+    $scope.eatADick = function () {
+      console.log("Dicks will be eaten!");
+    }
+  });
   app.directive("todoItem", function () {
     return {
       restrict : 'E',
@@ -24,8 +29,7 @@
     return {
       restrict: 'A',
       templateUrl: uiDir + 'add-button.html',
-      controller: function() {
-        //add button functionality
+      controller: function(){
       },
       controllerAs: 'addCtrl'
     };
