@@ -1,6 +1,13 @@
 (function(){
   var app = angular.module('todos', ['ngSanitize']);
 
+  app.directive("todoItem", function () {
+    return {
+      restrict : 'E',
+      templateUrl : '../assets/todo-item.html'
+    };
+  });
+  
   app.controller('navigationController', function() {
     //does nothing yet. Will handle searches & new notes
     return;

@@ -38,11 +38,8 @@
     <div id="scrollpanel" class="container" ng-controller="todoListController as listCtrl">
       <div class="row row-eq-height row-eq-width" ng-repeat="todo in listCtrl.todos">
 
-        <div class="col-sm-12 msg">
-          <h4 class="todo-title">{{todo.title}}</h4>
-          <p class="todo-body" ng-bind-html="todo.data"></p>
-          <span class="todo-timestamp">{{todo.timestamp | date : "dd MMM yy – HH:mm"}}</span>
-        </div>
+        <!-- custom directive containing todo-item layout. Stored in assets folder -->
+        <todo-item></todo-item>
 
       </div>
     </div>
