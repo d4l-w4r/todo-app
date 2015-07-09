@@ -1,17 +1,18 @@
 (function(){
+  var uiDir = '../assets/ui-elements/';
   var app = angular.module('todos', ['ngSanitize']);
 
   app.directive("todoItem", function () {
     return {
       restrict : 'E',
-      templateUrl : '../assets/ui-elements/todo-item.html'
+      templateUrl : uiDir + 'todo-item.html'
     };
   });
 
   app.directive("searchBar", function(){
     return {
       restrict: 'E',
-      templateUrl: '../assets/ui-elements/search-bar.html',
+      templateUrl: uiDir + 'search-bar.html',
       controller: function() {
         //search functionality
       },
@@ -22,7 +23,7 @@
   app.directive("addButton", function(){
     return {
       restrict: 'A',
-      templateUrl: '../assets/ui-elements/add-button.html',
+      templateUrl: uiDir + 'add-button.html',
       controller: function() {
         //add button functionality
       },

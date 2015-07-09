@@ -11,29 +11,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Todos</title>
   </head>
-  <body>
 
+  <body>
+    <!-- Top navigation bar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
+        <!-- left part of navbar, containing only the app name -->
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Todos</a>
         </div>
 
+        <!-- right part of navbar, containing search bar and an 'add' button -->
         <ul id="nav-elements" class="nav navbar-nav navbar-right">
-          <li> <search-bar></search-bar> </li>
-          <li id="add-btn" add-button></li>
+          <li> <search-bar></search-bar> </li> <!-- custom directive containing search bar -->
+          <li id="add-btn" add-button></li> <!-- custom directive containing -->
         </ul>
       </div>
     </div>
 
+    <!-- Content view containing list of todo items -->
     <div id="scrollpanel" class="container" ng-controller="todoListController as listCtrl">
       <div class="row row-eq-height" ng-repeat="todo in listCtrl.todos">
-        <!-- custom directive containing todo-item layout. Stored in assets folder -->
-        <todo-item></todo-item>
-
+        <!-- div containing the todo item -->
+        <div class="col-sm-12 msg">
+          <todo-item></todo-item> <!-- custom directive containing todo-item layout -->
+        </div>
       </div>
     </div>
 
+    <!-- Script imports to load angular.js and the app logic -->
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/lib/angular_sanitize.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
