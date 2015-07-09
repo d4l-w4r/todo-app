@@ -27,8 +27,7 @@
     </div>
 
     <div id="scrollpanel" class="container" ng-controller="todoListController as listCtrl">
-      <div class="row row-eq-height row-eq-width" ng-repeat="todo in listCtrl.todos">
-
+      <div class="row row-eq-height" ng-repeat="todo in listCtrl.todos">
         <!-- custom directive containing todo-item layout. Stored in assets folder -->
         <todo-item></todo-item>
 
