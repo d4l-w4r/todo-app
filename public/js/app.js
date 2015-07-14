@@ -4,7 +4,11 @@
 
   app.controller("mainController", function ($scope) {
     $scope.eatADick = function () {
-      console.log("Dicks will be eaten!");
+      console.log("LOG: Add todo button clicked!");
+    }
+    
+    $scope.raiseOverlayMenu = function() {
+      console.log("LOG: Overlay menu button clicked!")
     }
   });
   app.directive("todoItem", function () {
