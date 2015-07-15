@@ -30,18 +30,26 @@
     </div>
 
     <!-- Content view containing list of todo items -->
-    <div id="scrollpanel" class="container" ng-controller="todoListController as listCtrl">
-      <div class="row row-eq-height" ng-repeat="todo in listCtrl.todos">
+    <div id="scrollpanel" class="container">
+      <!-- div containing form to create new note. Hidden until add button is pressed-->
+      <div class="row row-eq-height">
+        <div class="todo-creator col-sm-12 msg" ng-hide="formHidden">
+          <form class="todo-body" name="newTodoForm">
+            <input type="text" class="form-control" placeholder="Todo titel..." ng-model="newTodo.todoTitle" required>
+            <textarea type="text" class="form-control" placeholder="Your todo message..." rows="8" cols="40" ng-model="newTodo.todoBody"></textarea>
+
+            <button class="btn btn-primary" type="submit" name="save-btn" ng-disabled="newTodoForm.$invalid" ng-click="saveNewTodo()">Save</button>
+            <button class="btn btn-default" type="reset" name="cancel-btn" ng-click="discardNewTodo()">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="row row-eq-height" ng-repeat="todo in todos | orderBy: '-timestamp'">
         <!-- div containing the todo item -->
         <div class="col-sm-12 msg">
           <todo-item></todo-item> <!-- custom directive containing todo-item layout -->
         </div>
       </div>
-    </div>
-
-    <!-- Todo settings/options overlay -->
-    <div class="item-overlay-menu">
-      <!-- overlay to be triggered at button -->
     </div>
 
     <!-- Side menu -->
@@ -52,6 +60,8 @@
     <!-- Script imports to load angular.js and the app logic -->
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/lib/angular_sanitize.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>

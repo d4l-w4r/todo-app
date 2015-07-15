@@ -90,6 +90,7 @@ body {
 
         .msg .todo-body {
           font-weight: 400;
+          min-height: 75px; /* set minimum so overlay-menu won't resize todo item */
           margin: 15px;
           text-align: justify;
         }
@@ -101,17 +102,26 @@ body {
         }
 
     /* Button for overlay menu appearing on right side of each todo item*/
-    .overlay-menu-btn {
+    .dropdown {
       position: relative;
       float: right;
-      color: #333;
-      top: -30px; /* align properly with the todo-title*/
+      top: -30px; /* align properly with the todo-title */
     }
 
-    .overlay-menu-btn:hover {
-      color: #555;
-    }
+      .overlay-menu-btn {
+        color: #333;
+      }
 
-    .overlay-menu-btn:focus {
-      color:#333;
+      .overlay-menu-btn:hover {
+        color: #555;
+      }
+
+      .overlay-menu-btn:focus {
+        color:#333;
+      }
+
+    .dropdown-menu {
+      position: relative;
+      top: 20px;
+      left: 12px;
     }

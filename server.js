@@ -25,7 +25,8 @@ app.get('/api/todos', function(req, res) {
 
 app.post('/api/todos', function(req, res) {
   //add a new todo & return updated storage
-  storeObj.addEntry(req.params.title, req.body.text);
+  console.log(req);
+  storeObj.addEntry(req.body.todoTitle, req.body.todoBody);
   res.json(storeObj.getEntries());
 });
 

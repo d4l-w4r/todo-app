@@ -1,6 +1,6 @@
 <h4 class="todo-title">{{todo.title}}</h4>
-<a class="overlay-menu-btn" href ng-click="raiseOverlayMenu()">
-  <span class="glyphicon glyphicon-option-vertical" ></span>
-</a>
+<div class="dropdown">
+  <overlay-menu></overlay-menu>
+</div>
 <p class="todo-body" ng-bind-html="todo.data"></p>
 <span class="todo-timestamp">{{todo.timestamp | date : "dd MMM yy – HH:mm"}}</span>
