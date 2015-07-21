@@ -2,5 +2,6 @@
 <div class="dropdown">
   <overlay-menu></overlay-menu>
 </div>
-<p class="todo-body" ng-bind-html="todo.data"></p>
+<!--<p class="todo-body" ng-bind-html="todo.data"></p> might need to revert-->
+<pre class="todo-body">{{todo.data}}</pre>
 <span class="todo-timestamp">{{todo.timestamp | date : "dd MMM yy – HH:mm"}}</span>
