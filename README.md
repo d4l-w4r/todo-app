@@ -2,7 +2,7 @@
 Simple todo webapp (only for my own learning purposes)
 
 This is a fairly simple and stupid Todo application that uses a faked database backend
-because I couldn't be bothered with setting up a proper one. 
+because I couldn't be bothered with setting up a proper one.
 
 I mostly did this to become more familiar with Angular.JS and Bootstrap; as such it is probably
 not very practical to use for anyone really and has –for the moment– pretty sub-standard code.  
@@ -10,9 +10,9 @@ not very practical to use for anyone really and has –for the moment– pretty 
   * Display stored todo items in a list
   * ability to add new todos to the list
   * ability to delete todos from the list
-  
+
 #### What needs to be done:
-  * improve styling for 'new todo' form
+  * ~~improve styling for 'new todo' form~~ DONE (for now...until the optional 'improve design' task)
   * implement marking todos as done
     * additional todo attribute needed in json (boolean 'done')
     * change styling of todo items to allow for a green border and check mark to be displayed when done
@@ -24,7 +24,7 @@ not very practical to use for anyone really and has –for the moment– pretty 
     * only start searching after 3rd character
   * REFACTOR!!!
     * especially make proper use of angular directives, services, and controllers
-  
+
   * (Optional) improve design
   * (Optional) implement side menu
     * implement use of notebooks

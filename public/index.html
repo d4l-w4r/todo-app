@@ -34,8 +34,8 @@
       <div class="row row-eq-height">
         <div class="todo-creator col-sm-12 msg" ng-hide="formHidden">
           <form class="todo-body" name="newTodoForm">
-            <input type="text" class="form-control" placeholder="Todo titel..." ng-model="newTodo.todoTitle" required>
-            <textarea type="text" class="form-control" placeholder="Your todo message..." rows="8" cols="40" ng-model="newTodo.todoBody"></textarea>
+            <input type="text" class="form-control new-todo-title" placeholder="Todo titel..." ng-model="newTodo.todoTitle" required>
+            <textarea resize="false" type="text" class="form-control new-todo-body" placeholder="Your todo message..." rows="8" cols="40" ng-model="newTodo.todoBody"></textarea>
 
             <button class="btn btn-primary" type="submit" name="save-btn" ng-disabled="newTodoForm.$invalid" ng-click="saveNewTodo()">Save</button>
             <button class="btn btn-default" type="reset" name="cancel-btn" ng-click="discardNewTodo()">Cancel</button>

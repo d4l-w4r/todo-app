@@ -139,3 +139,24 @@ body {
       top: 20px;
       left: 12px;
     }
+
+    /*New Todo Dialog*/
+    .new-todo-title {
+      margin-bottom: 12px;
+      width: 40%;
+    }
+
+    .new-todo-body {
+      margin-bottom: 12px;
+      max-width: 1150px;
+      min-width: 600px;
+    }
+
+    .todo-creator .todo-body .btn-primary {
+      width: 210px;
+      margin-right: 3px;
+    }
+
+    .todo-creator .todo-body .btn.btn-default {
+      width: 80px !important;
+    }
