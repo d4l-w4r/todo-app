@@ -4,4 +4,7 @@
 </div>
 <!--<p class="todo-body" ng-bind-html="todo.data"></p> might need to revert-->
 <pre class="todo-body">{{todo.data}}</pre>
+<div class="check-surface" ng-show="todoStateDone">
+  <span class="check-mark glyphicon glyphicon-ok"></span>
+</div>
 <span class="todo-timestamp">{{todo.timestamp | date : "dd MMM yy – HH:mm"}}</span>

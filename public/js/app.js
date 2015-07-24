@@ -54,7 +54,8 @@
 
     $scope.markDone = function(id) {
       console.log("LOG: Trying to mark todo " + id + " as done");
-      //implementation missing
+      $scope.todoState = "done";
+      $scope.todoStateDone = true;
     }
 
   }]);

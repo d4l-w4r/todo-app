@@ -69,6 +69,7 @@ body {
       overflow: auto;
 
       box-sizing: border-box;
+      padding-left: 0px !important;
 
       margin-left: 12px;
       margin-right: 12px;
@@ -84,6 +85,7 @@ body {
       /* Set properties for the different text elements in each todo box */
         .msg .todo-title {
           padding-top: 10px;
+          margin-left: 15px;
           font-weight: 300;
           text-shadow: 0px 1px 0px rgba(200,200,200, 0.25);
         }
@@ -115,6 +117,23 @@ body {
           font-size: 12px;
         }
 
+        .msg.done {
+          -moz-box-shadow: inset 0px 0px 1px 2px rgba(92, 184, 92,1);
+          box-shadow: inset 0px 0px 1px 2px rgba(92, 184, 92,1);
+
+        }
+
+        .msg .check-surface {
+          width: 20px;
+          height: 20px;
+          float: left;
+          border-top-right-radius: 4px;
+          background-color: rgba(92,184,92,1);
+        }
+
+        .msg .check-mark {
+          margin: 2px;
+        }
     /* Button for overlay menu appearing on right side of each todo item*/
     .dropdown {
       position: relative;
