@@ -10,10 +10,12 @@ not very practical to use for anyone really and has –for the moment– pretty 
   * Display stored todo items in a list
   * ability to add new todos to the list
   * ability to delete todos from the list
+  * ability to mark todos as done
+  * ability to edit todos
 
 #### What needs to be done:
   * ~~improve styling for 'new todo' form~~ DONE (for now...until the optional 'improve design' task)
-  * ~~implement marking todos as done~~ DONE (need to find a way so todos marked as done are either hidden or pushed to the bottom)
+  * ~~implement marking todos as done~~ DONE (for now... need to handle done todos better)
     * ~~additional todo attribute needed in json (boolean 'done')~~
     * ~~change styling of todo items to allow for a green border and check mark to be displayed when done~~
   * ~~implement editing of todos~~ DONE
