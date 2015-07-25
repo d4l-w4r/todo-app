@@ -4,7 +4,9 @@
 
   app.controller("mainController", ['$http', '$scope', function ($http, $scope) {
     $scope.formHidden = true;
+    $scope.isEdit = false;
     $scope.newTodo = {};
+    $scope.current_edit_id = "";
 
     $http.get('http://127.0.0.1:1337/api/todos').success(function(data, status, headers, config) {
         $scope.todos = JSON.parse(JSON.stringify(data));
@@ -41,15 +43,33 @@
       });
     }
 
+    $scope.saveEditedTodo = function () {
+      console.log("LOG: Trying to save edit");
+      //implementation missing
+      $scope.newTodo = {};
+      $scope.isEdit = false;
+      $scope.formHidden = true;
+      $scope.current_edit_id = "";
+    }
+
     $scope.discardNewTodo = function () {
       console.log("LOG: Discarding todo, clearing and hiding form");
       $scope.newTodo = {};
       $scope.formHidden = true;
+      $scope.current_edit_id = "";
     }
 
     $scope.editTodo = function (id) {
       console.log("LOG: Trying to edit todo: " + id);
-      //implementation missing
+      for(e in $scope.todos) {
+        if($scope.todos[e].id === id) {
+          $scope.newTodo.todoTitle = $scope.todos[e].title;
+          $scope.newTodo.todoBody = $scope.todos[e].data;
+          $scope.isEdit = true;
+          $scope.current_edit_id = id;
+          $scope.formHidden = false;
+        }
+      }
     }
 
     $scope.markDone = function(id) {
