@@ -36,6 +36,11 @@ app.delete('/api/todos/:todo_id', function(req, res) {
   res.json(storeObj.getEntries());
 });
 
+app.put('/api/todos/:todo_id', function (req, res) {
+  //mark a specific todo as done
+  storeObj.markDone(req.params.todo_id);
+  res.json(storeObj.getEntries());
+});
 
 // start listening on port 1337
 app.listen(1337);

@@ -45,12 +45,19 @@ module.exports.Store = function() {
       warning = "ERROR: The item you tried to save seems to have the same ID as an item already present in the DB. This means it has the exact same title and timestamp as another set of data already put in to the DB";
       console.log(warning);
     } else {
-      store.db[_id] = {'title': _title, 'data': _data, 'timestamp': _timestamp};
-      store.iterator.push({id: _id, title: _title, data: _data, timestamp: _timestamp});
+      store.db[_id] = {'title': _title, 'data': _data, 'todo_state': "", 'isDone': false, 'timestamp': _timestamp};
+      store.iterator.push({id: _id, title: _title, data: _data, 'todo_state': "", 'isDone': false, timestamp: _timestamp});
 
       saveDB();
     }
   };
+
+  this.markDone = function(_id) {
+    store.db[_id].todo_state = "done";
+    store.db[_id].isDone = true;
+
+    saveDB();
+  }
 
   this.deleteEntry = function(_id) {
     delete store.db[_id];
