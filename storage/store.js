@@ -52,12 +52,24 @@ module.exports.Store = function() {
     }
   };
 
+  this.editEntry = function (_id, _title, _data) {
+    store.db[_id].title = _title;
+    store.db[_id].data = _data;
+    for(e in store.iterator) {
+      if(store.iterator[e].id === _id) {
+        store.iterator[e].title = _title;
+        store.iterator[e].data = _data;
+      }
+    }
+    saveDB();
+  };
+
   this.markDone = function(_id) {
     if(!store.db[_id].isDone) {
       store.db[_id].todo_state = "done";
       store.db[_id].isDone = true;
       for(e in store.iterator) {
-        if(store.iterator[e].id=== _id) {
+        if(store.iterator[e].id === _id) {
           store.iterator[e].todo_state = "done";
           store.iterator[e].isDone = true;
         }
@@ -66,7 +78,7 @@ module.exports.Store = function() {
     } else {
       console.log("LOG: Entry already marked done");
     }
-  }
+  };
 
   this.deleteEntry = function(_id) {
     delete store.db[_id];

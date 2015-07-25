@@ -42,6 +42,11 @@ app.put('/api/todos/:todo_id', function (req, res) {
   res.json(storeObj.getEntries());
 });
 
+app.put('/api/todos/edit/:todo_id', function (req, res) {
+  storeObj.editEntry(req.params.todo_id, req.body.todoTitle, req.body.todoBody);
+  res.json(storeObj.getEntries());
+});
+
 // start listening on port 1337
 app.listen(1337);
 console.log('Server running at http://127.0.0.1:1337/');

@@ -45,11 +45,21 @@
 
     $scope.saveEditedTodo = function () {
       console.log("LOG: Trying to save edit");
-      //implementation missing
-      $scope.newTodo = {};
-      $scope.isEdit = false;
-      $scope.formHidden = true;
-      $scope.current_edit_id = "";
+
+      $http.put('http://127.0.0.1:1337/api/todos/edit/' + $scope.current_edit_id, {"todoTitle": $scope.newTodo.todoTitle, "todoBody": $scope.newTodo.todoBody}).
+      success(function (data, status, headers, config) {
+        console.log("LOG: Successfuly saved todo: " + $scope.newTodo.todoTitle);
+        $scope.newTodo = {};
+        $scope.isEdit = false;
+        $scope.formHidden = true;
+        $scope.current_edit_id = "";
+        $scope.todos = data;
+      }).
+      error(function (data, status, headers, config) {
+        console.log("ERROR: " + status + ". " + data);
+      });
+
+
     }
 
     $scope.discardNewTodo = function () {
