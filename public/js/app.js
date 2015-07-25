@@ -54,8 +54,12 @@
 
     $scope.markDone = function(id) {
       console.log("LOG: Trying to mark todo " + id + " as done");
-      $scope.todoState = "done";
-      $scope.todoStateDone = true;
+      $http.put('http://127.0.0.1:1337/api/todos/' + id).success(function(data, status, headers, config) {
+          console.log("LOG: Todo marked as done.");
+          $scope.todos = data;
+        }).error(function(data, status, headers, config) {
+          console.log("ERROR: " + status + ". " + data);
+        });
     }
 
   }]);

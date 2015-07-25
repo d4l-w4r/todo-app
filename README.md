@@ -13,9 +13,9 @@ not very practical to use for anyone really and has –for the moment– pretty 
 
 #### What needs to be done:
   * ~~improve styling for 'new todo' form~~ DONE (for now...until the optional 'improve design' task)
-  * implement marking todos as done
-    * additional todo attribute needed in json (boolean 'done')
-    * change styling of todo items to allow for a green border and check mark to be displayed when done
+  * ~~implement marking todos as done~~ DONE (need to find a way so todos marked as done are either hidden or pushed to the bottom)
+    * ~~additional todo attribute needed in json (boolean 'done')~~
+    * ~~change styling of todo items to allow for a green border and check mark to be displayed when done~~
   * implement editing of todos
     * hide todo that is being edited and display its title and content in the 'new todo' form at the top
   * implement automatically replacing linebreaks ('\n') with html 'br' tags when creating new todos

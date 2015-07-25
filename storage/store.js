@@ -53,10 +53,19 @@ module.exports.Store = function() {
   };
 
   this.markDone = function(_id) {
-    store.db[_id].todo_state = "done";
-    store.db[_id].isDone = true;
-
-    saveDB();
+    if(!store.db[_id].isDone) {
+      store.db[_id].todo_state = "done";
+      store.db[_id].isDone = true;
+      for(e in store.iterator) {
+        if(store.iterator[e].id=== _id) {
+          store.iterator[e].todo_state = "done";
+          store.iterator[e].isDone = true;
+        }
+      }
+      saveDB();
+    } else {
+      console.log("LOG: Entry already marked done");
+    }
   }
 
   this.deleteEntry = function(_id) {
