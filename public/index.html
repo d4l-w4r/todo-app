@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="row row-eq-height" ng-repeat="todo in todos | orderBy: '-timestamp'">
+      <div class="row row-eq-height" ng-repeat="todo in todos | orderBy: '-timestamp' | orderBy: 'isDone'">
         <!-- div containing the todo item -->
         <div class="col-sm-12 msg" ng-class="todo.todo_state">
           <todo-item></todo-item> <!-- custom directive containing todo-item layout -->
